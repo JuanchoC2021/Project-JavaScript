@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Uso en páginas web - JavaScript</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+        <h1>
+            <a href="index.html"><img src="media/js.png" alt="JavaScript"></a>
+        </h1>
+        <nav>
+            <a href="index.html" target="_blank">¿Que es Javascript?</a>
+            <a href="historia.html" target="_blank">Historia de Javascript</a>
+            <a href="lado-cliente.html" target="_blank">Uso en páginas web</a>
+            <a href="caracteristicas.html" target="_blank">Características</a>
+            <a href="sintaxis.html" target="_blank">Sintaxis</a>
+            <a href="seguridad.html" target="_blank">Seguridad</a>
+        </nav>
+        </div>
+    </header>
+
+    <section>
+        <div class="container sin">
+            <h1>Uso en páginas web</h1>
+            <p>
+                El uso más común de JavaScript es escribir funciones embebidas o incluidas en páginas HTML y que interactúan con el Document Object Model (DOM o Modelo de Objetos del Documento) de la página. Algunos ejemplos sencillos de este uso son: Cargar nuevo contenido para la página o enviar datos al servidor a través de AJAX sin necesidad de recargar la página (por ejemplo, una red social puede permitir al usuario enviar actualizaciones de estado sin salir de la página).
+                Animación de los elementos de página, hacerlos desaparecer, cambiar su tamaño, moverlos, etc.
+                Contenido interactivo, por ejemplo, juegos y reproducción de audio y vídeo.
+                Validación de los valores de entrada de un formulario web para asegurarse de que son aceptables antes de ser enviado al servidor.
+                Transmisión de información sobre los hábitos de lectura de los usuarios y las actividades de navegación a varios sitios web. Las páginas Web con frecuencia lo hacen para hacer análisis web, seguimiento de anuncios, la personalización o para otros fines.
+                <br><br>
+                Dado que el código JavaScript puede ejecutarse localmente en el navegador del usuario (en lugar de en un servidor remoto), el navegador puede responder a las acciones del usuario con rapidez, haciendo una aplicación más sensible. Por otra parte, el código JavaScript puede detectar acciones de los usuarios que HTML por sí sola no puede, como pulsaciones de teclado. Las aplicaciones como Gmail se aprovechan de esto: la mayor parte de la lógica de la interfaz de usuario está escrita en JavaScript, enviando peticiones al servidor (por ejemplo, el contenido de un mensaje de correo electrónico). La tendencia cada vez mayor por el uso de la programación Ajax explota de manera similar esta técnica.
+                <br><br>
+                Un motor de JavaScript (también conocido como intérprete de JavaScript o implementación JavaScript) es un intérprete que interpreta el código fuente de JavaScript y ejecuta la secuencia de comandos en consecuencia. El primer motor de JavaScript fue creado por Brendan Eich en Netscape Communications Corporation, para el navegador web Netscape Navigator. El motor, denominado SpiderMonkey, está implementado en C. Desde entonces, ha sido actualizado (en JavaScript 1.5) para cumplir con el ECMA-262 edición 3. El motor Rhino, creado principalmente por Norris Boyd (antes de Netscape, ahora en Google) es una implementación de JavaScript en Java. Rhino, como SpiderMonkey, es compatible con el ECMA-262 edición 3.
+                <br><br>
+                Un navegador web es, con mucho, el entorno de acogida más común para JavaScript. Los navegadores web suelen crear objetos no nativos, dependientes del entorno de ejecución, para representar el Document Object Model (DOM) en JavaScript. El servidor web es otro entorno común de servicios. Un servidor web JavaScript suele exponer sus propios objetos para representar objetos de petición y respuesta HTTP, que un programa JavaScript podría entonces interrogar y manipular para generar dinámicamente páginas web.
+                <br><br>
+                Debido a que JavaScript es el único lenguaje por el que los más populares navegadores comparten su apoyo, se ha convertido en un lenguaje al que muchos frameworks en otros lenguajes compilan, a pesar de que JavaScript no fue diseñado para tales propósitos. A pesar de las limitaciones de rendimiento inherentes a su naturaleza dinámica, el aumento de la velocidad de los motores de JavaScript ha hecho de este lenguaje un entorno para la compilación sorprendentemente factible.
+            </p>
+            <h2>Ejemplo de script</h2>
+            <p>
+                A continuación se muestra un breve ejemplo de una página web (ajustándose a las normas del estándar para HTML5) que utiliza JavaScript para el manejo del DOM:
+                <br><br>
+                
+                    < !DOCTYPE html >
+            < html >
+            <br>
+            < head >
+            <br> 
+            < meta charset="utf-8">
+            <br>
+            < title>Ejemplo sencillo< /title>
+            <br>
+            < /head >
+            <br><br>
+            < body >
+            <br><br>
+                < h1 id="header">Esto es JavaScript< /h1 >
+            <br><br>
+                < script >
+            <br>
+                document.body.appendChild(document.createTextNode('Hola Mundo!'));
+            <br><br>
+                var h1 = document.getElementById('header'); // contiene la referencia al tag < h1 >
+            <br>
+                h1 = document.getElementsByTagName('h1')[0]; // accediendo al mismo elemento < h1 >
+            <br>
+                < /script>
+            <br><br>
+                < noscript >Tu navegador no admite JavaScript, o JavaScript está deshabilitado.< /noscript >
+            <br><br>
+            < /body >
+            <br><br>
+            < /html >
+                
+            </p>
+            <h2>Consideraciones acerca de la compatibilidad</h2>
+            <p>Debido a que JavaScript se ejecuta en entornos muy variados, una parte importante de las pruebas y la depuración es probar y verificar que el código JavaScript funciona correctamente en múltiples navegadores. La interfaz DOM para acceder y manipular páginas web no es parte del estándar ECMAScript, o de la propia JavaScript. El DOM es definido por los esfuerzos de estandarización del W3C, una organización independiente. En la práctica, las implementaciones que hacen de JavaScript los distintos navegadores difieren tanto entre ellos mismos como de las normas del estándar.
+                <br><br>
+                Para hacer frente a estas diferencias, los autores de JavaScript pudieron ser capaces de escribir código compatible con los estándares que también fuera capaz de ejecutarse correctamente en la mayoría de los navegadores, o en su defecto, que al menos se pudiera escribir código capaz de comprobar la presencia de ciertas funcionalidades del navegador y que se comportase de manera diferente si no se dispusiese de dicha funcionalidad. Existen casos en los que dos navegadores pueden llegar a implementar la misma característica, pero con un comportamiento diferente, hecho que a los programadores les puede resultar de ayuda para detectar qué navegador se está ejecutando en ese instante y así cambiar el comportamiento de su escritura para que coincida. Los programadores también suelen utilizar bibliotecas o herramientas que tengan en cuenta las diferencias entre navegadores.
+                <br><br>
+                Además, los scripts pueden no funcionar para algunos usuarios. Por ejemplo, un usuario puede:
+                Utilizar un navegador antiguo sin compatibilidad completa con la API DOM,
+                Utilizar un navegador PDA o teléfono móvil que no puede ejecutar JavaScript,
+                Tener la ejecución de JavaScript deshabilitada, como precaución de seguridad,
+                Utilizar un navegador de voz debido a, por ejemplo, una discapacidad visual.
+                <br><br>
+                Para apoyar a estos usuarios, los programadores web suelen crear páginas que sean tolerante de fallos según el agente de usuario (tipo de navegador) que no admita JavaScript. En particular, la página debe seguir siendo útil aunque sin las características adicionales que JavaScript habría añadido. Un enfoque alternativo que muchos encuentran preferible es primero crear contenido utilizando las tecnologías que funcionan en todos los navegadores, y mejorar el contenido para los usuarios que han permitido JavaScript.</p>
+                <h2>Accesibilidad</h2>
+                <p>Suponiendo que el usuario no haya desactivado la ejecución de código JavaScript, en el lado del cliente JavaScript debe ser escrito tanto con el propósito de mejorar las experiencias de los visitantes con discapacidad visual o física, como el de evitar ocultar información a estos visitantes.
+                    <br><br>
+                    Los lectores de pantalla, utilizados por los ciegos y deficientes visuales, pueden ser tenidos en cuenta por JavaScript y así poder acceder y leer los elementos DOM de la página. El código HTML escrito debe ser lo más conciso, navegable y semánticamente rico posible, tanto si JavaScript se ejecuta como si no.
+                    <br><br>
+                    JavaScript no debería de ser totalmente dependiente de los eventos de ratón del navegador y debería ser accesible para aquellos usuarios que no quieran hacer uso del ratón (informática) para navegar o que opten por utilizar solamente el teclado. Hay eventos independientes del dispositivo, tales como onfocus y onchange que son preferibles en la mayoría de los casos.
+                    <br><br>
+                    JavaScript no debe ser utilizado para crear confusión o desorientación al usuario web. Por ejemplo, modificar o desactivar la funcionalidad normal del navegador, como cambiar la forma en que el botón de navegar hacia atrás o el evento de actualización se comportan, son prácticas que generalmente son mejores evitar. Igualmente, desencadenar eventos que el usuario puede no tener en cuenta reduce la sensación de control del usuario y provoca cambios inesperados al contenido de la página.
+                    <br><br>
+                    A menudo, el proceso de dotar a una página web compleja el mayor grado accesibilidad posible, se convierte en un problema no trivial donde muchos temas se acaban llevando al debate y a la opinión, siendo necesario el compromiso de todos hasta el final. Sin embargo, los agentes de usuario y las tecnologías de apoyo a personas con discapacidad están en constante evolución y nuevas directrices e información al respecto siguen publicándose en la web.</p>
+        </div>
+    </section>
+
+    <footer>&copyJuan Morales 2022</footer>
+
+</body>
+</html>

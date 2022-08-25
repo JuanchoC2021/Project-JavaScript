@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Características - JavaScript</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+        <h1>
+            <a href="index.html"><img src="media/js.png" alt="JavaScript"></a>
+        </h1>
+        <nav>
+            <a href="index.html" target="_blank">¿Que es Javascript?</a>
+            <a href="historia.html" target="_blank">Historia de Javascript</a>
+            <a href="lado-cliente.html" target="_blank">Uso en páginas web</a>
+            <a href="caracteristicas.html" target="_blank">Características</a>
+            <a href="sintaxis.html" target="_blank">Sintaxis</a>
+            <a href="seguridad.html" target="_blank">Seguridad</a>
+        </nav>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h1>Características</h1>
+            <h2>Imperativo y estructurado</h2>
+            <p>JavaScript es compatible con gran parte de la estructura de programación 
+                de C (por ejemplo, sentencias if, bucles for, sentencias switch, etc.). 
+                Con una salvedad, en parte: en C, el ámbito de las variables alcanza al 
+                bloque en el cual fueron definidas; sin embargo, JavaScript no es 
+                compatible con esto, puesto que el ámbito de las variables es el de la 
+                función en la cual fueron declaradas. Esto cambia con la versión de 
+                ECMAScript 2015, ya que añade compatibilidad con block scoping por medio 
+                de la palabra clave let. Como en C, JavaScript hace distinción entre 
+                expresiones y sentencias. Una diferencia sintáctica con respecto a C es 
+                la inserción automática de punto y coma, es decir, en JavaScript los puntos 
+                y coma que finalizan una sentencia pueden ser omitidos.
+            </p>
+            <h2>Dinámicos</h2>
+            <h3>Tipado dinámico</h3>
+            <p>Como en la mayoría de lenguajes de scripting, el tipo está asociado al 
+                valor, no a la variable. Por ejemplo, una variable x en un momento dado 
+                puede estar ligada a un número y más adelante, religada a una cadena. 
+                JavaScript es compatible con varias formas de comprobar el tipo de un 
+                objeto, incluyendo duck typing. Una forma de saberlo es por medio de la 
+                palabra clave typeof.
+            </p>
+            <h3>Objetual</h3>
+            <p>JavaScript está formado casi en su totalidad por objetos. Los objetos en 
+                JavaScript son arrays asociativos, mejorados con la inclusión de prototipos 
+                (ver más adelante). Los nombres de las propiedades de los objetos son 
+                claves de tipo cadena: obj.x = 10 y obj['x'] = 10 son equivalentes, siendo 
+                azúcar sintáctico la notación con punto. Las propiedades y sus valores
+                 pueden ser creados, cambiados o eliminados en tiempo de ejecución. 
+                 La mayoría de propiedades de un objeto (y aquellas que son incluidas 
+                 por la cadena de la herencia prototípica) pueden ser enumeradas por medio 
+                 de la instrucción de bucle for... in. JavaScript tiene un pequeño número 
+                 de objetos predefinidos como son Function y Date.
+            </p>
+            <h3>Evaluación en tiempo de ejecución</h3>
+            <p>JavaScript incluye la función eval que permite evaluar expresiones 
+                expresadas como cadenas en tiempo de ejecución. Por ello se recomienda que 
+                eval sea utilizado con precaución y que se opte por utilizar la función 
+                JSON.parse() en la medida de lo posible, pues puede resultar mucho más 
+                segura.
+            </p>
+            <h2>Funcional</h2>
+            <h3>Funciones de primera clase</h3>
+            <p>A las funciones se les suele llamar ciudadanos de primera clase; son objetos 
+                en sí mismos. Como tal, poseen propiedades y métodos, como .call() y 
+                .bind().Una función anidada es una función definida dentro de otra. Esta 
+                es creada cada vez que la función externa es invocada. Además, cada función 
+                creada forma una clausura; es el resultado de evaluar un ámbito conteniendo 
+                en una o más variables dependientes de otro ámbito externo, incluyendo 
+                constantes, variables locales y argumentos de la función externa llamante. 
+                El resultado de la evaluación de dicha clausura forma parte del estado 
+                interno de cada objeto función, incluso después de que la función exterior 
+                concluya su evaluación. 
+            </p>
+            <h2>Prototípico</h2>
+            <h3>Prototipos</h3>
+            <p>JavaScript usa prototipos en vez de clases para el uso de herencia. 
+                Es posible llegar a emular muchas de las características que proporcionan 
+                las clases en lenguajes orientados a objetos tradicionales por medio de 
+                prototipos en JavaScript. 
+            </p>
+            <h3>Funciones como constructores de objetos</h3>
+            <p>Las funciones también se comportan como constructores. Prefijar una llamada 
+                a la función con la palabra clave new crear una nueva instancia de un 
+                prototipo, que heredan propiedades y métodos del constructor 
+                (incluidas las propiedades del prototipo de Object). ECMAScript 5 ofrece 
+                el método Object.create, permitiendo la creación explícita de una instancia 
+                sin tener que heredar automáticamente del prototipo de Object 
+                (en entornos antiguos puede aparecer el prototipo del objeto creado como 
+                null). La propiedad prototype del constructor determina el objeto usado 
+                para el prototipo interno de los nuevos objetos creados. Se pueden añadir 
+                nuevos métodos modificando el prototipo del objeto usado como constructor. 
+                Constructores predefinidos en JavaScript, como Array u Object, también 
+                tienen prototipos que pueden ser modificados. Aunque esto sea posible se 
+                considera una mala práctica modificar el prototipo de Object ya que la 
+                mayoría de los objetos en Javascript heredan los métodos y propiedades del 
+                objeto prototype, objetos los cuales pueden esperar que estos no hayan sido 
+                modificados.34
+            </p>
+            <h2>Otras características</h2>
+            <h3>Entorno de ejecución</h3>
+            <p>JavaScript normalmente depende del entorno en el que se ejecute 
+                (por ejemplo, en un navegador web) para ofrecer objetos y métodos por los 
+                que los scripts pueden interactuar con el "mundo exterior". De hecho, 
+                depende del entorno para ser capaz de proporcionar la capacidad de incluir 
+                o importar scripts (por ejemplo, en HTML por medio del tag script). 
+                (Esto no es una característica del lenguaje, pero es común en la mayoría 
+                de las implementaciones de JavaScript.)
+            </p>
+            <h3>Funciones variádicas</h3>
+            <p>Un número indefinido de parámetros pueden ser pasados a la función. La 
+                función puede acceder a ellos a través de los parámetros o también a 
+                través del objeto local arguments. Las funciones variádicas también 
+                pueden ser creadas usando el método .apply().
+            </p>
+            <h3>Funciones como métodos</h3>
+            <p>A diferencia de muchos lenguajes orientados a objetos, no hay distinción 
+                entre la definición de función y la definición de método. Más bien, la 
+                distinción se produce durante la llamada a la función; una función puede 
+                ser llamada como un método. Cuando una función es llamada como un método 
+                de un objeto, la palabra clave this, que es una variable local a la 
+                función, representa al objeto que invocó dicha función.
+            </p>
+            <h3>Arrays y la definición literal de objetos</h3>
+            <p>Al igual que muchos lenguajes de script, arrays y objetos 
+                (arrays asociativos en otros idiomas) pueden ser creados con una sintaxis 
+                abreviada. De hecho, estos literales forman la base del formato de datos 
+                JSON.
+            </p>
+            <h3>Expresiones regulares</h3>
+            <p>JavaScript también es compatible con expresiones regulares de una manera 
+                similar a Perl, que proporcionan una sintaxis concisa y poderosa para 
+                la manipulación de texto que es más sofisticado que las funciones 
+                incorporadas a los objetos de tipo string.
+            </p>
+            <h2>Extensiones específicas del fabricante</h2>
+            <p>JavaScript se encuentra oficialmente bajo la organización de Mozilla 
+                Foundation, y periódicamente se añaden nuevas características del lenguaje. 
+                Sin embargo, sólo algunos motores JavaScript son compatibles con estas 
+                características: <br>
+                -Las propiedades get y set (también compatibles con WebKit, Opera, 
+                -ActionScript y Rhino). <br>
+                -Cláusulas catch condicionales. <br>
+                -Protocolo iterador adoptado de Python. <br>
+                -Corrutinas también adoptadas de Python. <br>
+                -Generación de listas y expresiones por comprensión también adoptado de Python. <br>
+                -Establecer el ámbito a bloque a través de la palabra clave let. <br>
+                -Desestructuración de arrays y objetos (forma limita de emparejamiento de patrones). <br>
+                -Expresiones concretas en funciones (function(args) expr). <br>
+                -ECMAScript para XML (E4X), una extensión que añade compatibilidad nativa XML a ECMAScript.
+            </p>
+        </div>
+    </section>
+
+    <footer>&copyJuan Morales 2022</footer>
+    
+</body>
+</html>

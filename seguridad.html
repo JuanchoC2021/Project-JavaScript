@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Seguridad - JavaScript</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+        <h1>
+            <a href="index.html"><img src="media/js.png" alt="JavaScript"></a>
+        </h1>
+        <nav>
+            <a href="index.html" target="_blank">¿Que es Javascript?</a>
+            <a href="historia.html" target="_blank">Historia de Javascript</a>
+            <a href="lado-cliente.html" target="_blank">Uso en páginas web</a>
+            <a href="caracteristicas.html" target="_blank">Características</a>
+            <a href="sintaxis.html" target="_blank">Sintaxis</a>
+            <a href="seguridad.html" target="_blank">Seguridad</a>
+        </nav>
+        </div>
+    </header>
+
+    <section>
+        <h1>Seguridad</h1>
+        <p>
+            JavaScript y el DOM permite que existan programadores que hagan un uso inapropiado para introducir scripts que ejecuten código con contenido malicioso sin el consentimiento del usuario y que pueda así comprometer su seguridad.
+            <br><br>
+            Los desarrolladores de los navegadores tienen en cuenta este riesgo utilizando dos restricciones. En primer lugar, los scripts se ejecutan en un sandbox en el que sólo se pueden llevar a cabo acciones relacionadas con la web, no con tareas de programación de propósito general, como la creación de archivos. En segundo lugar, está limitada por la política del mismo origen: los scripts de un sitio web no tienen acceso a la información enviada a otro sitio web (de otro dominio) como pudiera ser nombres de usuario, contraseñas o cookies. La mayoría de los fallos de seguridad de JavaScript están relacionados con violaciones de cualquiera de estas dos restricciones.
+            <br><br>
+            Existen proyectos como AdSafe o Secure ECMA script (SES) que proporcionan mayores niveles de seguridad, en especial en el código creado por terceros (tales como los anuncios).49​50​
+            <br><br>
+            La Política de Contenido Seguro (CSP) es el método principal previsto para garantizar que sólo código de confianza pueda ser ejecutado en una página web.
+            </p>
+            <h2>Vulnerabilidades cross-site</h2>
+            <p>
+                Un problema común de seguridad en JavaScript es el cross-site scripting o XSS, una violación de la política de mismo origen. Las vulnerabilidades XSS permiten a un atacante inyectar código JavaScript en páginas web visitadas por el usuario. Una de esas webs podría ser la de un banco, pudiendo el atacante acceder a la aplicación de banca con los privilegios de la víctima, lo que podría revelar información secreta o transferir dinero sin la autorización de la víctima. Una solución para las vulnerabilidades XSS es utilizar HTML escaping cuando se muestre información de fuentes no confiables.
+                <br><br>
+                Algunos navegadores incluyen una protección parcial contra los ataques XSS reflejados (el atacante está en la misma petición web). El atacante proporciona una URL incluyendo código malicioso. Sin embargo, incluso los usuarios de los navegadores son vulnerables a otros ataques XSS, tales como aquellos en los que el código malicioso se almacena en una base de datos. Solo el correcto diseño de las aplicaciones Web en la parte servidora puede prevenir totalmente XSS. Las vulnerabilidades XSS también pueden ocurrir debido a errores de ejecución por los desarrolladores del navegador.51​
+                <br><br>
+                Otra vulnerabilidad es la falsificación de petición de sitio cruzado o CSRF. En CSRF, el código del sitio web atacante engaña al navegador de la víctima, permitiendo al atacante realizar peticiones en nombre de la víctima, haciendo imposible saber a la aplicación de destino (por ejemplo, la de un banco haciendo una transferencia de dinero) saber si la petición ha sido realizada voluntariamente por el usuario o por un ataque CSRF.
+                <br><br>
+                El ataque funciona porque, si el sitio de destino hace uso únicamente de las cookies para autenticar las solicitudes de la víctima, las peticiones iniciadas por el código del atacante tendrán las mismas credenciales de acceso legítimo que las solicitudes iniciadas por el propio usuario.
+                <br><br>
+                En general, la solución a CSRF consiste en introducir un campo de formulario oculto cuyo valor se utilice para realizar la autenticación, y no solo por medio de las cookies, en solicitudes que puedan tener efectos duraderos. La comprobación de la cabecera HTTP referer también puede servir de ayuda.
+                <br><br>
+                "Hijacking JavaScript" es un tipo de ataque CSRF en el que una etiqueta < script > en el sitio web del atacante explota una vulnerabilidad en la página del sitio de la víctima que le hace devolver información privada, en forma de JSON o código JavaScript. Las posibles soluciones son: que se requiera un token de autenticación en los parámetros de las peticiones POST y GET para aquellas peticiones que requieran devolver información privada del usuario. usar POST y nunca GET para solicitudes que devuelven información privada.
+        </p>
+    </section>
+
+    <footer>&copyJuan Morales 2022</footer>
+</body>
+</html>
